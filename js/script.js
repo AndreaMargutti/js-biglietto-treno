@@ -9,20 +9,20 @@
 
 // # Fase di preparazione
 //Recupero elementi html
-let divAge = document.getElementById('age');
-console.log(divAge);
+let pAge = document.getElementById('age');
+console.log(pAge);
 
-let divKm = document.getElementById('km');
-console.log(divKm);
+let pKm = document.getElementById('km');
+console.log(pKm);
 
-let divPrice = document.getElementById('price');
-console.log(divPrice);
+let pPrice = document.getElementById('price');
+console.log(pPrice);
 
-let divDiscount = document.getElementById('discount');
-console.log(divDiscount);
+let pDiscount = document.getElementById('discount');
+console.log(pDiscount);
 
-let divFinalPrice = document.getElementById('final-price');
-console.log(divFinalPrice);
+let pFinalPrice = document.getElementById('final-price');
+console.log(pFinalPrice);
 
 //Creazione variabili per sconti
 let minorDiscount;
@@ -79,20 +79,20 @@ if (passengerAge >= 18 && passengerAge < 65) {
 console.log('final-price', Math.round(finalPrice *  100) / 100);
 
 //età
-divAge.innerText += ` ${passengerAge}`;
+pAge.innerText += ` ${passengerAge}`;
 
 //km
-divKm.innerText += ` ${passengerKm}`;
+pKm.innerText += ` ${passengerKm}`;
 
 //price
-divPrice.innerText += ` ${ticketPrice}`;
+pPrice.innerText += ` ${ticketPrice}`;
 
 //discount
 if (passengerAge >= 18 && passengerAge < 65) {
 } else if (passengerAge < 18) {
-    divDiscount.innerText += ` ${minorDiscount}`;
+    pDiscount.innerText += ` ${minorDiscount}`;
 } else {
-    divDiscount.innerText += ` ${seniorDiscount}`;
+    pDiscount.innerText += ` ${seniorDiscount}`;
 }
 
 //! Prima versione ciclo if
@@ -105,4 +105,4 @@ if (passengerAge >= 18 && passengerAge < 65) {
 } */
 
 //prezzo finale in pagina
-divFinalPrice.innerText += ` ${Math.round(finalPrice * 100) / 100}`;
+pFinalPrice.innerText += ` ${Math.round(finalPrice * 100) / 100}`;
