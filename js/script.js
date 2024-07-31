@@ -39,4 +39,4 @@ if (passengerAge < 18) {
 
 // # Fase di output
 //Prezzo finale
-console.log(ticketPrice);
+console.log(Math.round(ticketPrice *  100) / 100);
