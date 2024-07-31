@@ -62,23 +62,23 @@ if (passengerAge < 18) {
 console.log(Math.round(finalPrice *  100) / 100);
 
 //età
-divAge.innerText += ' ' + passengerAge;
+divAge.innerText += ` ${passengerAge}`;
 
 //km
-divKm.innerText += ' ' + passengerKm;
+divKm.innerText += ` ${passengerKm}`;
 
 //price
-divPrice.innerText += ' ' + ticketPrice;
+divPrice.innerText += ` ${ticketPrice}`;
 
 //discount
 if (passengerAge < 18) {
-    divDiscount.innerText += ' ' + minorDiscount;
+    divDiscount.innerText += ` ${minorDiscount}`;
 } else if (passengerAge >= 65) {
-    divDiscount.innerText += ' ' + seniorDiscount;
+    divDiscount.innerText += ` ${seniorDiscount}`;
 } else {
     divDiscount.innerText += ' ---' 
 }
 
 //prezzo finale
 
-divFinalPrice.innerText += ' ' + finalPrice;
+divFinalPrice.innerText += ` ${finalPrice}`;
