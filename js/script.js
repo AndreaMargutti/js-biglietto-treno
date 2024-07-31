@@ -20,6 +20,11 @@ console.log('passengerKm:', passengerKm);
 
 // # Fase di elaborazione dati
 //Calcolo prezzo base del biglietto
-const ticketPrice = passengerKm * 0.21;
+let ticketPrice = passengerKm * 0.21;
 console.log('ticketPrice:', ticketPrice);
-// # Output
+
+//Calcolo dello sconto
+const minorDiscount = ticketPrice * 20 / 100;
+console.log('minor-discount:', minorDiscount);
+ticketPrice -= minorDiscount;
+console.log(ticketPrice);
