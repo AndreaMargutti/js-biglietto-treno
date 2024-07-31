@@ -30,13 +30,13 @@ if (passengerAge < 18) {
     const minorDiscount = ticketPrice * 20 / 100;
     console.log('minor-discount:', minorDiscount);
     ticketPrice -= minorDiscount;
-    console.log('price-minor:', ticketPrice);
 } else if (passengerAge >= 65) {
     //Calcolo dello sconto per i senior
     const seniorDiscount = ticketPrice * 40 / 100;
     console.log('senior-discount:', seniorDiscount);
     ticketPrice -= seniorDiscount;
-    console.log('price-senior:', ticketPrice)
 }
 
+// # Fase di output
+//Prezzo finale
 console.log(ticketPrice);
