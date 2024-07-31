@@ -40,10 +40,10 @@ console.log('passengerKm:', passengerKm);
 const ticketPrice = passengerKm * 0.21;
 console.log('ticketPrice:', ticketPrice);
 
-//variabile contente il prezzo finale (con sconto se presente)
+//variabile contente il prezzo finale di base
 let finalPrice = ticketPrice;
 
-//calcolo sconto
+//calcolo sconti
 minorDiscount = Math.round(((ticketPrice * 20 / 100) * 100) / 100);
 console.log('minor-discount:', minorDiscount);
 
@@ -58,6 +58,7 @@ if (passengerAge >= 18 && passengerAge < 65) {
     finalPrice -= seniorDiscount;
 }
 
+// ! Prima Versione ciclo if
 /* if (passengerAge < 18) {
     //Calcolo dello sconto per i minori
     minorDiscount = ticketPrice * 20 / 100;
@@ -84,13 +85,21 @@ divKm.innerText += ` ${passengerKm}`;
 divPrice.innerText += ` ${ticketPrice}`;
 
 //discount
-if (passengerAge < 18) {
+if (passengerAge >= 18 && passengerAge < 65) {
+} else if (passengerAge < 18) {
+    divDiscount.innerText += ` ${minorDiscount}`;
+} else {
+    divDiscount.innerText += ` ${seniorDiscount}`;
+}
+
+//! Prima versione ciclo if
+/* if (passengerAge < 18) {
     divDiscount.innerText += ` ${minorDiscount}`;
 } else if (passengerAge >= 65) {
     divDiscount.innerText += ` ${seniorDiscount}`;
 } else {
     divDiscount.innerText += ' ---' 
-}
+} */
 
 //prezzo finale
 divFinalPrice.innerText += ` ${Math.round(finalPrice * 100) / 100}`;
