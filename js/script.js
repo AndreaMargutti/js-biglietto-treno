@@ -23,8 +23,14 @@ console.log('passengerKm:', passengerKm);
 let ticketPrice = passengerKm * 0.21;
 console.log('ticketPrice:', ticketPrice);
 
-//Calcolo dello sconto
+//Calcolo dello sconto per i minori
 const minorDiscount = ticketPrice * 20 / 100;
 console.log('minor-discount:', minorDiscount);
 ticketPrice -= minorDiscount;
-console.log(ticketPrice);
+console.log('price-minor:', ticketPrice);
+
+//Calcolo dello sconto per i senior
+const seniorDiscount = ticketPrice * 40 / 100;
+console.log('senior-discount:', seniorDiscount);
+ticketPrice -= seniorDiscount;
+console.log('price-senior:', ticketPrice)
