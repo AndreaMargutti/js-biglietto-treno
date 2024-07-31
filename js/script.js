@@ -1,8 +1,8 @@
 /* Scaletta Mentale
 1. Chiedere età e Km all'utente
-2. Definire il prezzo base del biglietto
-    2.1. Calcolare lo sconto per i minorenni
-    2.2 Calcolare lo sconto per gli over 65
+2. Definire il prezzo base del biglietto (km * 0.21)
+    2.1. Calcolare lo sconto per i minorenni (20%)
+    2.2 Calcolare lo sconto per gli over 65 (40%)
 3. Definire gli sconti e quando vengono applicati
 4. Stampare l'output in console
 */
