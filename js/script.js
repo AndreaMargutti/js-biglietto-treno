@@ -11,11 +11,11 @@
 
 // # Fase di raccolta dati
 //Richiesta età
-const passengerAge = parseInt(prompt('Quanti anni hai?', '18'));
+const passengerAge = parseInt(prompt('Quanti anni hai?', '20'));
 console.log('passengerAge:', passengerAge);
 
 //Richiesta km percorsi
-const passengerKm = parseInt(prompt('Quanti km vuoi percorrere?', '20'));
+const passengerKm = parseInt(prompt('Quanti km vuoi percorrere?', '100'));
 console.log('passengerKm:', passengerKm);
 
 // # Fase di elaborazione dati
@@ -23,14 +23,20 @@ console.log('passengerKm:', passengerKm);
 let ticketPrice = passengerKm * 0.21;
 console.log('ticketPrice:', ticketPrice);
 
-//Calcolo dello sconto per i minori
-const minorDiscount = ticketPrice * 20 / 100;
-console.log('minor-discount:', minorDiscount);
-ticketPrice -= minorDiscount;
-console.log('price-minor:', ticketPrice);
+//creazione ciclo if
 
-//Calcolo dello sconto per i senior
-const seniorDiscount = ticketPrice * 40 / 100;
-console.log('senior-discount:', seniorDiscount);
-ticketPrice -= seniorDiscount;
-console.log('price-senior:', ticketPrice)
+if (passengerAge < 18) {
+    //Calcolo dello sconto per i minori
+    const minorDiscount = ticketPrice * 20 / 100;
+    console.log('minor-discount:', minorDiscount);
+    ticketPrice -= minorDiscount;
+    console.log('price-minor:', ticketPrice);
+} else if (passengerAge >= 65) {
+    //Calcolo dello sconto per i senior
+    const seniorDiscount = ticketPrice * 40 / 100;
+    console.log('senior-discount:', seniorDiscount);
+    ticketPrice -= seniorDiscount;
+    console.log('price-senior:', ticketPrice)
+}
+
+console.log(ticketPrice);
