@@ -8,6 +8,21 @@
 */
 
 // # Fase di preparazione
+//Recupero elementi html
+let divAge = document.getElementById('age');
+console.log(divAge);
+
+let divKm = document.getElementById('km');
+console.log(divKm);
+
+let divPrice = document.getElementById('price');
+console.log(divPrice);
+
+let divDiscount = document.getElementById('discount');
+console.log(divDiscount);
+
+let divFinalPrice = document.getElementById('final-price');
+console.log(divFinalPrice);
 
 // # Fase di raccolta dati
 //Richiesta età
@@ -20,23 +35,50 @@ console.log('passengerKm:', passengerKm);
 
 // # Fase di elaborazione dati
 //Calcolo prezzo base del biglietto
-let ticketPrice = passengerKm * 0.21;
+const ticketPrice = passengerKm * 0.21;
 console.log('ticketPrice:', ticketPrice);
+
+//variabile contente il prezzo finale (con sconto se presente)
+let finalPrice = ticketPrice;
+let minorDiscount;
+let seniorDiscount;
 
 //creazione ciclo if
 
 if (passengerAge < 18) {
     //Calcolo dello sconto per i minori
-    const minorDiscount = ticketPrice * 20 / 100;
+    minorDiscount = ticketPrice * 20 / 100;
     console.log('minor-discount:', minorDiscount);
-    ticketPrice -= minorDiscount;
+    finalPrice = ticketPrice - minorDiscount;
 } else if (passengerAge >= 65) {
     //Calcolo dello sconto per i senior
-    const seniorDiscount = ticketPrice * 40 / 100;
+    seniorDiscount = ticketPrice * 40 / 100;
     console.log('senior-discount:', seniorDiscount);
-    ticketPrice -= seniorDiscount;
+    finalPrice = ticketPrice - seniorDiscount;
 }
 
 // # Fase di output
 //Prezzo finale
-console.log(Math.round(ticketPrice *  100) / 100);
+console.log(Math.round(finalPrice *  100) / 100);
+
+//età
+divAge.innerText += ' ' + passengerAge;
+
+//km
+divKm.innerText += ' ' + passengerKm;
+
+//price
+divPrice.innerText += ' ' + ticketPrice;
+
+//discount
+if (passengerAge < 18) {
+    divDiscount.innerText += ' ' + minorDiscount;
+} else if (passengerAge >= 65) {
+    divDiscount.innerText += ' ' + seniorDiscount;
+} else {
+    divDiscount.innerText += ' ---' 
+}
+
+//prezzo finale
+
+divFinalPrice.innerText += ' ' + finalPrice;
