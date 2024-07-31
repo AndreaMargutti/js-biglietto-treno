@@ -59,7 +59,7 @@ if (passengerAge < 18) {
 
 // # Fase di output
 //Prezzo finale
-console.log(Math.round(finalPrice *  100) / 100);
+console.log('final-price', Math.round(finalPrice *  100) / 100);
 
 //età
 divAge.innerText += ` ${passengerAge}`;
