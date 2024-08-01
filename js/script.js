@@ -46,11 +46,11 @@ console.log('ticketPrice:', ticketPrice);
 let finalPrice = ticketPrice;
 
 //Calcolo sconto per minorenni
-minorDiscount = Math.round(((ticketPrice * 20 / 100) * 100) / 100);
+minorDiscount = Math.round((ticketPrice * 20 / 100).toFixed(2));
 console.log('minor-discount:', minorDiscount);
 
 //Calcolo sconto per senior (over 65)
-seniorDiscount = Math.round(((ticketPrice * 40 / 100) * 100) / 100);
+seniorDiscount = Math.round((ticketPrice * 40 / 100).toFixed(2));
 console.log('senior-discount:', seniorDiscount);
 
 //Creazione ciclo if
@@ -76,7 +76,7 @@ if (passengerAge >= 18 && passengerAge < 65) {
 
 // # Fase di output
 //Prezzo finale in console
-console.log('final-price', Math.round(finalPrice *  100) / 100);
+console.log('final-price', Math.round(finalPrice).toFixed(2));
 
 //età
 pAge.innerText += ` ${passengerAge}`;
@@ -105,4 +105,4 @@ if (passengerAge >= 18 && passengerAge < 65) {
 } */
 
 //prezzo finale in pagina
-pFinalPrice.innerText += ` ${Math.round(finalPrice * 100) / 100}`;
+pFinalPrice.innerText += ` ${Math.round(finalPrice).toFixed(2)}`;
